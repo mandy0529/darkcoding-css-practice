@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>facebook</title>
+  </head>
+  <body>
+    <section class="main">
+      <header>
+        <a href="#" class="logo"><img src="img/logo.png" alt="logo" /></a>
+        <ul>
+          <li><a href="#" class="active">home</a></li>
+          <li><a href="#" class="active">about</a></li>
+          <li><a href="#" class="active">support</a></li>
+        </ul>
+        <a href="#" class="app"> ↳ download app</a>
+      </header>
+      <div class="context-box">
+        <div class="text">
+          <h2>facebook</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
+            corrupti tempore cupiditate maiores earum provident ea esse facilis
+            laboriosam soluta. Adipisci a, quia tempora nihil molestiae nisi in
+            natus necessitatibus,
+          </p>
+          <h4>download the app</h4>
+          <a href="#" class="btn">📱 Apple store</a>
+          <a href="#" class="btn">♠️ Play store</a>
+        </div>
+
+        <div class="img-box">
+          <img src="img/fb1.png" class="slides active" />
+          <img src="img/fb2.png" class="slides" alt="img" />
+          <img src="img/fb3.png" class="slides" alt="img" />
+          <img src="img/fb4.png" class="slides" alt="img" />
+          <img src="img/fb5.png" class="slides" alt="img" />
+        </div>
+
+        <div class="dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <ul class="sci">
+          <li><a href="#" name="logo-facebook">𝐟</a></li>
+          <li><a href="#" name="logo-insta">I</a></li>
+          <li><a href="#" name="logo-twitter">T</a></li>
+        </ul>
+      </div>
+    </section>
+    <script>
+      const dots = document.querySelectorAll('.dot');
+      const slides = document.querySelectorAll('.slides');
+
+      const handleDot = (e, index) => {
+        const target = e.target;
+        dots.forEach((dot) => dot.classList.remove('active'));
+        target.classList.add('active');
+      };
+
+      dots.forEach((dot) => dot.addEventListener('click', handleDot));
+      slides.forEach((slide, index) =>
+        slide.addEventListener('click', (e) => {
+          const target = e.target;
+          slides.forEach((slide, index) =>
+            slide[index].classList.remove('active')
+          );
+          target[index].classList.add('active');
+        })
+      );
+    </script>
+  </body>
+</html>
